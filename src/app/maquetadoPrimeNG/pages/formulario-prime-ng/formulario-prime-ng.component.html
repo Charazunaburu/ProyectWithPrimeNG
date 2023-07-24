@@ -1,0 +1,55 @@
+
+
+<p-panel header="Formulario Ejemplo" class="p-1">
+  <!-- <p-card class="bg-primary"> -->
+    <form [formGroup]="myForm" (ngSubmit)="onSave()">
+    <div class="formgrid grid">
+        <div class="field col-12 md:col-6">
+            <label htmlFor="username">Username</label>
+            <input pInputText formControlName="username" id="username" aria-describedby="username-help" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full h-3rem" />
+            <!-- <small id="username-help">Enter your username to reset your password.</small> -->
+        </div>
+        <div class="field col-12 md:col-6">
+            <label for="lastname">Lastname</label>
+            <input formControlName="lastname" pInputText type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full h-3rem">
+        </div>
+        <div class="field col-12">
+            <label for="address">Address</label>
+            <textarea id="address" type="text" rows="4" formControlName="address" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full h-3rem"></textarea>
+        </div>
+        <div class="field col-12 md:col-4">
+            <label for="calendar">Calendar</label>
+            <br>
+            <p-calendar styleClass="w-full" formControlName="calendar" id="calendar" class="w-full" [showIcon]="true"></p-calendar>
+        </div>
+        <div class="field col-12 md:col-4">
+          <label for="country">Country</label>
+          <br>
+            <p-dropdown  formControlName="country" [(ngModel)]="selectedCountry" [options]="countries" styleClass="w-full h-3rem" optionLabel="name" [filter]="true" filterBy="name" [showClear]="true" placeholder="Select a Country">
+              <ng-template pTemplate="selectedItem">
+                  <div class="flex align-items-center gap-2" *ngIf="selectedCountry">
+                      <!-- <img src="https://primefaces.org/cdn/primeng/images/demo/flag/flag_placeholder.png" [class]="'flag flag-' + selectedCountry.code.toLowerCase()" style="width: 18px"/> -->
+                      <div>{{ selectedCountry.name }}</div>
+                  </div>
+              </ng-template>
+              <ng-template let-country pTemplate="item">
+                  <div class="flex align-items-center gap-2">
+                      <!-- <img src="https://primefaces.org/cdn/primeng/images/demo/flag/flag_placeholder.png" [class]="'flag flag-' + country.code.toLowerCase()" style="width: 18px"/> -->
+                      <div>{{ country.name }}</div>
+                  </div>
+              </ng-template>
+          </p-dropdown>
+        </div>
+
+        <div class="field col-12 md:col-4">
+            <label for="zip">Zip</label>
+            <input id="zip" type="text" formControlName="zip" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full h-3rem">
+        </div>
+        <div class="field col-12 md:col-12 flex flex-row-reverse">
+          <p-button icon="pi pi-check" type="submit" label="Submit" styleClass="p-button-rounded"></p-button>
+      </div>
+      </div>
+    </form>
+  <!-- </p-card > -->
+</p-panel>
+
