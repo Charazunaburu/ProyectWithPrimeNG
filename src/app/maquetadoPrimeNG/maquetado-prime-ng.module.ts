@@ -7,14 +7,15 @@ import { MaquetadoPrimeNgRouting } from './maquetado-prime-ng-routing.module';
 
 import { PrimeNgModule } from '../prime-ng/prime-ng.module';
 import { DataTableComponent } from './pages/data-table/data-table.component';
-
+import { DataTableModalComponent } from './components/modales/data-table-modal/data-table-modal.component';
 
 
 @NgModule({
   declarations: [
     IndexPrimeNgComponent,
     FormularioPrimeNgComponent,
-    DataTableComponent
+    DataTableComponent,
+    DataTableModalComponent
   ],
   imports: [
     CommonModule,

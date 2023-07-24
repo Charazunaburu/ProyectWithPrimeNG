@@ -9,6 +9,13 @@ import { CalendarModule } from 'primeng/calendar';
 import { MenubarModule } from 'primeng/menubar';
 import { PanelModule } from "primeng/panel";
 import { ButtonModule } from 'primeng/button';
+import { TableModule } from 'primeng/table';
+import { TagModule } from 'primeng/tag';
+import { MultiSelectModule } from 'primeng/multiselect';
+import { SliderModule } from 'primeng/slider';
+import { ProgressBarModule } from 'primeng/progressbar';
+import { DialogModule } from 'primeng/dialog';
+
 @NgModule({
   exports: [
     InputTextModule,
@@ -19,7 +26,13 @@ import { ButtonModule } from 'primeng/button';
     CalendarModule,
     MenubarModule,
     PanelModule,
-    ButtonModule
+    ButtonModule,
+    TableModule,
+    TagModule,
+    MultiSelectModule,
+    SliderModule,
+    ProgressBarModule,
+    DialogModule
   ],
   providers: [],
 })
